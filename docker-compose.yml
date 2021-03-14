@@ -1,0 +1,14 @@
+version: "3"
+services:
+  clockmachinedb:
+    image: postgres:12
+    container_name: "testdb"
+    environment:
+      - POSTGRES_DB=testdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - TZ=GMT
+    volumes:
+      - "./data:/var/lib/postgresql/data"
+    ports:
+      - 5432:5432
